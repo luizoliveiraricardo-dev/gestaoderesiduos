@@ -1,1 +1,193 @@
+:root {
+    /* Paleta de cores Agro/Sustentabilidade */
+    --cor-primaria: #2E7D32;
+    --cor-secundaria: #81C784;
+    --cor-destaque: #FFB300;
 
+    /* Cores de apoio */
+    --cor-fundo: #F8FAF7;
+    --cor-superficie: #FFFFFF;
+    --cor-texto: #1F2937;
+    --cor-texto-claro: #6B7280;
+    --cor-borda: #D1D5DB;
+
+    /* Tipografia */
+    --fonte-principal: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
+    /* Espaçamentos */
+    --espacamento-xs: 0.5rem;
+    --espacamento-sm: 1rem;
+    --espacamento-md: 1.5rem;
+    --espacamento-lg: 2rem;
+    --espacamento-xl: 3rem;
+
+    /* Efeitos */
+    --raio: 12px;
+    --sombra: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --transicao: 0.3s ease;
+}
+
+/* Reset Global */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Configurações gerais */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--fonte-principal);
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* Estrutura principal */
+header,
+main,
+footer {
+    width: min(90%, 1100px);
+    margin: 0 auto;
+}
+
+/* Cabeçalho */
+header {
+    text-align: center;
+    padding: var(--espacamento-xl) 0;
+}
+
+header h1 {
+    color: var(--cor-primaria);
+    font-size: clamp(2rem, 5vw, 3rem);
+    margin-bottom: var(--espacamento-sm);
+}
+
+header p {
+    color: var(--cor-texto-claro);
+    font-size: 1.1rem;
+}
+
+/* Conteúdo principal */
+main {
+    display: flex;
+    flex-direction: column;
+    gap: var(--espacamento-lg);
+    padding-bottom: var(--espacamento-xl);
+}
+
+/* Seções */
+section {
+    background-color: var(--cor-superficie);
+    padding: var(--espacamento-lg);
+    border-radius: var(--raio);
+    box-shadow: var(--sombra);
+}
+
+section h2 {
+    color: var(--cor-primaria);
+    margin-bottom: var(--espacamento-sm);
+}
+
+section p {
+    color: var(--cor-texto);
+}
+
+/* Formulário */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--espacamento-sm);
+    margin-top: var(--espacamento-md);
+}
+
+label {
+    font-weight: 600;
+    color: var(--cor-texto);
+}
+
+input {
+    padding: 0.9rem 1rem;
+    border: 1px solid var(--cor-borda);
+    border-radius: var(--raio);
+    font-size: 1rem;
+    transition: var(--transicao);
+    background-color: #fff;
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--cor-primaria);
+    box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.15);
+}
+
+/* Botão */
+button {
+    margin-top: var(--espacamento-sm);
+    padding: 1rem;
+    border: none;
+    border-radius: var(--raio);
+    background-color: var(--cor-primaria);
+    color: white;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: var(--transicao);
+}
+
+button:hover {
+    background-color: #256428;
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+/* Área de resultado */
+#resultado {
+    margin-top: var(--espacamento-lg);
+    padding: var(--espacamento-md);
+    background-color: rgba(129, 199, 132, 0.15);
+    border-left: 5px solid var(--cor-secundaria);
+    border-radius: var(--raio);
+}
+
+#resultado h3 {
+    color: var(--cor-primaria);
+    margin-bottom: var(--espacamento-xs);
+}
+
+#saida {
+    color: var(--cor-texto);
+}
+
+/* Rodapé */
+footer {
+    text-align: center;
+    padding: var(--espacamento-lg) 0;
+    color: var(--cor-texto-claro);
+    border-top: 1px solid var(--cor-borda);
+    margin-top: var(--espacamento-lg);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    header,
+    main,
+    footer {
+        width: 95%;
+    }
+
+    section {
+        padding: var(--espacamento-md);
+    }
+
+    button {
+        width: 100%;
+    }
+}
